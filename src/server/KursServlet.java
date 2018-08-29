@@ -54,6 +54,9 @@ public class KursServlet extends HttpServlet {
                     request.getRequestDispatcher("/home.jsp").forward(request, response);
                 }
             }
+        } else if (requestURI.endsWith("/signout.html")){
+            request.getSession().setAttribute("user", new User());
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
         }
     }
 }
